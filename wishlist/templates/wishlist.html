@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h5>Nama: </h5>
-<b>{{nama}}</b>
+<div>
+    <nav class="navbar navbar-expand-lg bg-warning px-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">{{nama}}</a>   
+        <button class="btn btn-danger" type="submit" onclick="location.href=`{% url 'wishlist:logout' %}`">Logout</button>
+      </form>
+    </div>
+  </nav>
 
-<table>
+<table class="table table-striped">
     <tr>
     <th>Nama Barang</th>
     <th>Harga Barang</th>
@@ -21,7 +27,7 @@
     {% endfor %}
     
 </table>
-<h5>Sesi terakhir login: {{ last_login }}</h5>
-<button><a href="{% url 'wishlist:logout' %}">Logout</a></button>
+<h9>Sesi terakhir login: {{ last_login }}</h9>
+</div>
 
 {% endblock content %}
